@@ -31,5 +31,6 @@ build/
 .vscode/
 
 # exclude everything
-# /uploads/*
+uploads/*
+uploads/.keep
 
