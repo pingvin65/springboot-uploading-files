@@ -26,7 +26,7 @@ public class FileUploadController {
 
 
 	@RequestMapping("/")
-	public String UploadPage(Model model) throws IOException {
+	public String home(Model model) throws IOException {
 		File dir = new File("uploads");
 
 		logger.info("Getting all files in " + dir.getCanonicalPath() + " including those in subdirectories");
@@ -41,7 +41,7 @@ public class FileUploadController {
 	}
 
 	@RequestMapping("/upload")
-	public String upload2(Model model, @RequestParam("files") MultipartFile multipartFile,
+	public String upload(Model model, @RequestParam("files") MultipartFile multipartFile,
 			RedirectAttributes redirectAttributes) throws IOException {
 
 		if(multipartFile.isEmpty()) {
