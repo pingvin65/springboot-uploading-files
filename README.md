@@ -2,13 +2,6 @@
 This project uses [Apache Commons IO](https://commons.apache.org/proper/commons-io/) to upload a file, Thymeleaf and Spring Boot starter.
 Commons IO is a library of utilities to assist with developing IO functionality. 
 
- There are six main areas included:
-- Utility classes - with static methods to perform common tasks
-- Input - useful Input Stream and Reader implementations
-- Output - useful Output Stream and Writer implementations
-- Filters - various implementations of file filters
-- Comparators - various implementations of java.util.Comparator for files
-- File Monitor - a component for monitoring file system events
 
 ## Controller
 The controller has two methods home and uploud. The home method uses Commons IO to list files in a directory. The upload method uses Commons IO for the upload file.
