@@ -16,12 +16,19 @@ public class MvcConfig implements WebMvcConfigurer {
 //          .addResourceHandler("/resources/**")
 //          .addResourceLocations("/resources/"); 
 //    }
-//	private static final Logger logger = LoggerFactory.getLogger(FileUploadController.class);
-
+//	private static final Logger logger = LoggerFactory.getLogger(MvcConfig.class);
+	private final String uploadDirectory = "uploads";
+	private final String separator = File.separator;
+	
+	
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 
 		registry.addResourceHandler("/uploads/**")
-				.addResourceLocations("file:" + System.getProperty("user.dir") + File.separator + "uploads/");
+				.addResourceLocations("file:" + getAbslutePath(this.uploadDirectory));
+	}
+	
+	private String getAbslutePath(String uploadDirectory) {
+		return System.getProperty("user.dir") + this.separator + uploadDirectory + this.separator;
 	}
 }
