@@ -22,7 +22,7 @@ public class FileUploadController {
 	private static final Logger logger = LoggerFactory.getLogger(FileUploadController.class);
 
 	
-	public static String uploadDirectory = System.getProperty("user.dir") + "/uploads";
+	public static String uploadDirectory = System.getProperty("user.dir") + File.separator +"uploads";
 
 
 	@RequestMapping("/")
