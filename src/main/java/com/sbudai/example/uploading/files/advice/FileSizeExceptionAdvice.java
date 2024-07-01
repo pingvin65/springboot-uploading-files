@@ -16,8 +16,15 @@ public class FileSizeExceptionAdvice {
 	@Value("${spring.servlet.multipart.max-file-size}")
 	private String maxFileSize;
 
+	
+	/**
+	 * 
+	 * @param exc MaxUploadSizeExceededException
+	 * @param redirectAttributes RedirectAttributes
+	 * @return String
+	 */
 	@ExceptionHandler(MaxUploadSizeExceededException.class)
-	public String handleError2(MaxUploadSizeExceededException exc, RedirectAttributes redirectAttributes) {
+	public String handleMaxUploadSizeExceededException(MaxUploadSizeExceededException exc, RedirectAttributes redirectAttributes) {
 
 		String message = "Attempt to upload file with the size exceeded max allowed value = " + maxFileSize + ".";
 		logger.error("handleFileSizeException ffffffff {} ----- {}", exc.getMessage(), exc.getCause().getMessage());

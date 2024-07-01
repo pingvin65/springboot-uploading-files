@@ -64,7 +64,7 @@ public class FileUploadController {
 	@PostMapping("/upload")
 	public String upload(Model model, @RequestParam("files") MultipartFile multipartFile,
 			RedirectAttributes redirectAttributes) throws IOException {
-		logger.error("------ {}", multipartFile.getBytes().length);
+		logger.error("get Bytes {}", multipartFile.getBytes().length);
 		if (multipartFile.isEmpty()) {
 			redirectAttributes.addFlashAttribute("warning", "There is no file to upload !");
 			return "redirect:/";
