@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+ <head>
+     <title>     Error</title>
+     <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}" />
+     <script type='text/javascript' src="/webjars/jquery/3.7.1/jquery.min.js"></script>
+     <script type="text/javascript" th:src="@{/webjars/bootstrap/5.3.3/js/bootstrap.min.js}"></script>
+ </head>
+ <body>
+     <div class="container h-100 d-flex align-items-center justify-content-center flex-column" style="margin-top: 5%;">
+       <h1 class="text-center">OOPS !</h1>
+      <div>
+       <p>There seems to be a problem with the page you requested 
+       (<span th:text="${path}"></span>).</p>
+       <p th:text="${'The status code is ' + status 
+       + ', which means that the page was ' + error + '.'}"></p>
+       <p th:text="${'Further details: ' + message + '.'}"></p>
+       <a class="btn btn-primary" href="/">Back to home</a>
+       </div>
+    </div>
+ </body>
+</html>
